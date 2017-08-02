@@ -16,7 +16,7 @@ use Mix.Config
 config :deploy, DeployWeb.Endpoint,
   http: {:system, "PORT"},
   load_from_system_env: true,
-  url: [host: "example.com", port: {:system, "PORT"}],
+  url: [host: "localhost", port: {:system, "PORT"}],
   cache_static_manifest: "priv/static/cache_manifest.json",
   server: true,
   root: ".",

@@ -9,11 +9,14 @@ defmodule Deploy.Application do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
-      supervisor(Deploy.Repo, []),
+      # supervisor(Deploy.Repo, []),
+      Deploy.Repo,
       # Start the endpoint when the application starts
-      supervisor(DeployWeb.Endpoint, []),
+      # supervisor(DeployWeb.Endpoint, []),
+      DeployWeb.Endpoint,
       # Start your own worker by calling: Deploy.Worker.start_link(arg1, arg2, arg3)
       # worker(Deploy.Worker, [arg1, arg2, arg3]),
+      Deploy.SampleServer,
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
